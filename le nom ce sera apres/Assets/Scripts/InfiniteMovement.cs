@@ -13,6 +13,7 @@ public class InfiniteMovement : MonoBehaviour
     [SerializeField] [Header("Movement")] public float moveSpeed;
     [SerializeField] private float slideSpeed = 5f;
     public bool isSliding = false;
+    public float slideMultiplier = 1.2f;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Collider2D col;
@@ -77,21 +78,8 @@ public class InfiniteMovement : MonoBehaviour
         {
             extraJumps = extraJumpsValue;
         }
-        
-        // switch (jumpBufferCounter)
-        // {
-        //     case 1:
-        //         wallOnLeft = true;
-        //         break;
-        //     case 2:
-        //         wallOnLeft = false;
-        //         break;
-        //     default:
-        //         wallOnLeft = true;
-        //         break;
-        // }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             prefromSlide();
         }
@@ -127,6 +115,12 @@ public class InfiniteMovement : MonoBehaviour
             coyoteTimeCounter = 0f;
         }
         
+        //slide
+        if (Input.GetButtonDown("Slide") && rb.velocity.x > 0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x * slideMultiplier, rb.velocity.y);
+        }
+
     }
 
     void ManageGravity()
@@ -188,7 +182,7 @@ public class InfiniteMovement : MonoBehaviour
     {
         isSliding = true;
         
-        anim.SetBool ("IsSlide", true);
+        //anim.SetBool ("IsSlide", true);
 
         groundedBoxSize = 0f;
         slideColl.enabled = true;
@@ -201,11 +195,12 @@ public class InfiniteMovement : MonoBehaviour
     IEnumerator stopSlide()
     {
         yield return new WaitForSeconds(0.8f);
-        anim.Play("Idle");
-        anim.SetBool("IsSlide", false);
+        //anim.Play("Idle");
+        //anim.SetBool("IsSlide", false);
         regularColl.enabled = true;
-        slideColl.enabled = false;
+        slideColl.enabled = true;
         isSliding = false;
+        yield return null;
     }
 }
 
