@@ -3390,6 +3390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabList:
-  - {fileID: 2448113152440473818, guid: f0213330e993e364fa43cd5057c1f3a7, type: 3}
+  - {fileID: 6161133734769914639, guid: f0213330e993e364fa43cd5057c1f3a7, type: 3}
   - {fileID: 6466074918539095081}
+  - {fileID: 2710642663872891241, guid: 47560148c73e49f4cb2446ec7229cb66, type: 3}
   nextSpawnOffset: {fileID: 6466074917918510332}

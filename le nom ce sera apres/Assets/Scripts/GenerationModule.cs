@@ -15,9 +15,21 @@ public class GenerationModule : MonoBehaviour
 
     private int _randomFloat;
 
-    private StackGrids stackGrids;
+    public StackGrids stackGrids;
 
     private int _indexList;
+
+    private void Start()
+    {
+        // GameObject[] stackgrids ;
+        // stackgrids = GameObject.FindGameObjectsWithTag("EditorOnly");
+        // foreach(GameObject x in stackgrids)
+        // {
+        //     stackGrids = x.;
+        //     Debug.Log(x.name);
+        // }
+        stackGrids = FindObjectOfType<StackGrids>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -30,6 +42,7 @@ public class GenerationModule : MonoBehaviour
             spawnedPrefab.transform.position = nextSpawnOffset.transform.position;
             
             stackGrids.oldSpawnedPrefab.Add(spawnedPrefab);
+            _indexList = stackGrids.oldSpawnedPrefab.Count;
         }
     }
 
@@ -37,17 +50,17 @@ public class GenerationModule : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (_indexList > 2)
+            if (stackGrids.oldSpawnedPrefab.Count > 2)
             {
-                Destroy(stackGrids.basePrefab);
+                if (stackGrids.basePrefab != null)
+                {
+                    Destroy(stackGrids.basePrefab);
+                }
+                
                 Destroy(stackGrids.oldSpawnedPrefab[0]);
+                
                 stackGrids.oldSpawnedPrefab.RemoveAt(0);
             }
         }
-    }
-
-    private void FixedUpdate()
-    {
-        _indexList = stackGrids.oldSpawnedPrefab.Count;
     }
 }
