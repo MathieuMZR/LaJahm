@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: ElecBarrier3
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 7576246986527899376, guid: c73dcc5abf86f494ea7e5581e37e7cfd, type: 3}
+  - {fileID: 4424133888524810013, guid: c73dcc5abf86f494ea7e5581e37e7cfd, type: 3}
+  - {fileID: -971832797263698029, guid: c73dcc5abf86f494ea7e5581e37e7cfd, type: 3}
+  - {fileID: -4688337500632273704, guid: c73dcc5abf86f494ea7e5581e37e7cfd, type: 3}
+  - {fileID: 7971677920755133082, guid: c73dcc5abf86f494ea7e5581e37e7cfd, type: 3}
+  - {fileID: -9142509526834431224, guid: c73dcc5abf86f494ea7e5581e37e7cfd, type: 3}
+  m_MinSpeed: 10
+  m_MaxSpeed: 10
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
