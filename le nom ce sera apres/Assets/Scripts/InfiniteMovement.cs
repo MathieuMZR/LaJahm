@@ -51,7 +51,7 @@ public class InfiniteMovement : MonoBehaviour
     
     void Update()
     {
-        rb.velocity = new Vector2(transform.localScale.x * moveSpeed, rb.velocity.y);
+        //rb.velocity = new Vector2(transform.localScale.x * moveSpeed, rb.velocity.y);
         //rb.velocity = new Vector2(rb.velocity.x * moveSpeed/2.1f, rb.velocity.y);
         //rb.velocity = (new Vector2(moveSpeed, rb.velocity.y));
         //if (rb.velocity.x > 30)
@@ -68,8 +68,14 @@ public class InfiniteMovement : MonoBehaviour
         {
             extraJumps = extraJumpsValue;
         }
+        
     }
-    
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(transform.localScale.x * moveSpeed, rb.velocity.y);
+    }
+
     void ManageInputs()
     {
         // Gère le jumpBuffer
