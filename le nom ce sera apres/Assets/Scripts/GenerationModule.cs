@@ -23,9 +23,8 @@ public class GenerationModule : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            _randomFloat = Random.Range(0, stackGrids.oldSpawnedPrefab.Count);
-            Debug.Log(_randomFloat);
-            _nextSpawnPrefab = prefabList[_randomFloat];
+            _randomFloat = Random.Range(0, 1); //prefabList.Count);
+            _nextSpawnPrefab = prefabList[1];//_randomFloat];
 
             GameObject spawnedPrefab = Instantiate(_nextSpawnPrefab);
             spawnedPrefab.transform.position = nextSpawnOffset.transform.position;
@@ -38,20 +37,22 @@ public class GenerationModule : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (stackGrids.oldSpawnedPrefab.Any())
+            if (_indexList > 2)
             {
-                if (_indexList > 2)
-                {
-                    Destroy(stackGrids.basePrefab);
-                    Destroy(stackGrids.oldSpawnedPrefab[0]);
-                    stackGrids.oldSpawnedPrefab.RemoveAt(0);
-                }
+                Destroy(stackGrids.basePrefab);
+                Destroy(stackGrids.oldSpawnedPrefab[0]);
+                stackGrids.oldSpawnedPrefab.RemoveAt(0);
             }
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         _indexList = stackGrids.oldSpawnedPrefab.Count;
+    }
+
+    private void Update()
+    {
+        Debug.Log(prefabList[1].name);
     }
 }

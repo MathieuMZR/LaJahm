@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 556608442}
   - component: {fileID: 556608441}
   - component: {fileID: 556608440}
+  - component: {fileID: 556608445}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -385,7 +386,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &556608444
 MonoBehaviour:
@@ -426,6 +427,25 @@ MonoBehaviour:
   slideColl: {fileID: 0}
   regularColl: {fileID: 0}
   anim: {fileID: 0}
+--- !u!95 &556608445
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556608439}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9bf0718b8809e364d92a6b0bec78dfd9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &606005356
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oldSpawnedPrefab:
-  - {fileID: 7066717334386021918}
+  - {fileID: 0}
   basePrefab: {fileID: 7066717334386021918}
 --- !u!4 &1106111696
 Transform:
@@ -966,7 +986,7 @@ PrefabInstance:
       objectReference: {fileID: 1587553117}
     - target: {fileID: 4863938001190291431, guid: 4906e2d01c934ac4f94419a447ff0d7e, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4863938001190291431, guid: 4906e2d01c934ac4f94419a447ff0d7e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1023,7 +1043,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2448113152440473816, guid: f0213330e993e364fa43cd5057c1f3a7, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2448113152440473816, guid: f0213330e993e364fa43cd5057c1f3a7, type: 3}
       propertyPath: m_LocalPosition.x
