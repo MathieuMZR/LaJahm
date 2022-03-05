@@ -1954,6 +1954,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: moveSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
       propertyPath: slideColl
       value: 
       objectReference: {fileID: 36658306}
@@ -1965,6 +1969,10 @@ PrefabInstance:
       propertyPath: regularColl
       value: 
       objectReference: {fileID: 36658306}
+    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: groundedBoxSize
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
       propertyPath: slideMultiplier
       value: 1

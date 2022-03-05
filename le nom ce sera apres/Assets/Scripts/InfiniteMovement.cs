@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -136,7 +137,8 @@ public class InfiniteMovement : MonoBehaviour
     
     void GroundCheck() // Fait une box en dessous du joueur pour dectecter si le joueur touche le sol
     {
-        if (Physics2D.OverlapBox(col.bounds.center - Vector3.up * col.bounds.size.y / 2, new Vector2(col.bounds.size.x/1.1f, groundedBoxSize), 0f, groundLayer)) isGrounded = true;
+        if (Physics2D.OverlapBox(col.bounds.center - Vector3.up * col.bounds.size.y / 2,
+            new Vector2(col.bounds.size.x / 1.1f, groundedBoxSize), 0f, groundLayer)) isGrounded = true;
         else
         {
             if (!isGrounded) return;
@@ -145,6 +147,12 @@ public class InfiniteMovement : MonoBehaviour
             co = SetGroundedFalseDelay();
             StartCoroutine(co);
         }
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawCube(col.bounds.center - Vector3.up * col.bounds.size.y / 2, 
+            new Vector3(col.bounds.size.x/1.1f, groundedBoxSize,0));
     }
     
     IEnumerator SetGroundedFalseDelay()
@@ -184,12 +192,12 @@ public class InfiniteMovement : MonoBehaviour
         
         //anim.SetBool ("IsSlide", true);
 
-        groundedBoxSize = 0f;
-        slideColl.enabled = true;
+        //groundedBoxSize = 0f;
+        //slideColl.enabled = true;
 
-        rb.AddForce(Vector2.right * slideSpeed);
-
-        StartCoroutine("stopSlide");
+        //rb.AddForce(Vector2.right * slideSpeed);
+        slideColl.size = new Vector2(1f, 0.7f);
+        StartCoroutine(stopSlide());
     } 
 
     IEnumerator stopSlide()
@@ -197,10 +205,13 @@ public class InfiniteMovement : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         //anim.Play("Idle");
         //anim.SetBool("IsSlide", false);
-        regularColl.enabled = true;
-        slideColl.enabled = true;
+        slideColl.size = new Vector2(1f, 1.4f);
+        //regularColl.enabled = true;
+        //slideColl.enabled = true;
         isSliding = false;
         yield return null;
     }
+
+    
 }
 
