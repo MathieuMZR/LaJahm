@@ -7,8 +7,12 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer), typeof(Collider2D))]
 public class InfiniteMovement : MonoBehaviour
 {
+    public SpriteRenderer sprite;
+    
     // je t'aime
     [SerializeField] [Header("Movement")] public float moveSpeed;
+    [SerializeField] private float slideSpeed = 5f;
+    public bool isSliding = false;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Collider2D col;
@@ -41,6 +45,11 @@ public class InfiniteMovement : MonoBehaviour
     [SerializeField] private float wallBoxSize;
     [SerializeField] private bool wallOnLeft;
     [SerializeField] private bool wallOnRight;
+    [SerializeField] private BoxCollider2D slideColl;
+    [SerializeField] public BoxCollider2D regularColl;
+
+    [SerializeField] [Header("Animations")]
+    public Animator anim;
     
     private void Awake() // récupère les components
     {
@@ -69,6 +78,23 @@ public class InfiniteMovement : MonoBehaviour
             extraJumps = extraJumpsValue;
         }
         
+        // switch (jumpBufferCounter)
+        // {
+        //     case 1:
+        //         wallOnLeft = true;
+        //         break;
+        //     case 2:
+        //         wallOnLeft = false;
+        //         break;
+        //     default:
+        //         wallOnLeft = true;
+        //         break;
+        // }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            prefromSlide();
+        }
     }
 
     private void FixedUpdate()
@@ -116,24 +142,14 @@ public class InfiniteMovement : MonoBehaviour
     
     void GroundCheck() // Fait une box en dessous du joueur pour dectecter si le joueur touche le sol
     {
-        if (Physics2D.OverlapBox(col.bounds.center - Vector3.up * col.bounds.size.y / 2, new Vector2(col.bounds.size.x/1.1f, groundedBoxSize), 0f, groundLayer))
-        {
-            isGrounded = true;
-        }
+        if (Physics2D.OverlapBox(col.bounds.center - Vector3.up * col.bounds.size.y / 2, new Vector2(col.bounds.size.x/1.1f, groundedBoxSize), 0f, groundLayer)) isGrounded = true;
         else
         {
-            if (isGrounded)
-            {
-                if (resetSetGroundedFalseDelay)
-                {
-                    if (co != null)
-                    {
-                        StopCoroutine(co);
-                    }
-                    co = SetGroundedFalseDelay();
-                    StartCoroutine(co);
-                }
-            }
+            if (!isGrounded) return;
+            if (!resetSetGroundedFalseDelay) return;
+            if (co != null) StopCoroutine(co);
+            co = SetGroundedFalseDelay();
+            StartCoroutine(co);
         }
     }
     
@@ -167,4 +183,29 @@ public class InfiniteMovement : MonoBehaviour
     }
     
     #endregion
+
+    private void prefromSlide()
+    {
+        isSliding = true;
+        
+        anim.SetBool ("IsSlide", true);
+
+        groundedBoxSize = 0f;
+        slideColl.enabled = true;
+
+        rb.AddForce(Vector2.right * slideSpeed);
+
+        StartCoroutine("stopSlide");
+    } 
+
+    IEnumerator stopSlide()
+    {
+        yield return new WaitForSeconds(0.8f);
+        anim.Play("Idle");
+        anim.SetBool("IsSlide", false);
+        regularColl.enabled = true;
+        slideColl.enabled = false;
+        isSliding = false;
+    }
 }
+
