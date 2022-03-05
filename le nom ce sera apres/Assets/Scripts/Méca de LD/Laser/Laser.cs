@@ -2,9 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.UI;
 
 public class Laser : MonoBehaviour
 {
+    public float speed;
+    
     public GameObject raycastLaser1;
     public GameObject raycastLaser2;
     public LayerMask playerLayerMask;
@@ -13,12 +16,19 @@ public class Laser : MonoBehaviour
     public bool shootReady = false;
 
     private int index = 0;
+    private Rigidbody2D rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     
-    
+
     private void Update()
     {
+        rb.velocity = new Vector2(transform.localScale.x * speed, rb.velocity.y);
         StartCoroutine(TimeToChargeLaser());
-
+        
         if (shootReady == true && index < 1)
         {
             index += 1;
@@ -37,6 +47,7 @@ public class Laser : MonoBehaviour
             if (hit1 || hit2)
             {
                 // Kill the player
+                Debug.Log("Ta mere");
             }
         }
     }

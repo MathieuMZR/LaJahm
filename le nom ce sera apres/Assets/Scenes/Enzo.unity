@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!61 &36658306 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8419794092147976307, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+  m_PrefabInstance: {fileID: 8419794091832373866}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &369792307
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,8 +158,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369792307}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 76.4191, y: 0, z: 0}
+  m_LocalScale: {x: 8.6419, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 393304943}
   m_RootOrder: 0
@@ -1749,20 +1754,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 369792314}
     m_ColliderPaths:
-    - - X: -100000000
+    - - X: -864190016
         Y: -30000000
-      - X: 1330000000
+      - X: 11493727232
         Y: -30000000
-      - X: 1330000000
+      - X: 11493727232
         Y: -20000000
-      - X: -100000000
+      - X: -864190016
         Y: -20000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 132.99997, y: -3}
-      - {x: 132.99997, y: -2}
-      - {x: -10, y: -2.0000293}
-      - {x: -9.99997, y: -3}
+    - - {x: 1149.3727, y: -3}
+      - {x: 1149.3727, y: -2}
+      - {x: -86.41901, y: -2.0000293}
+      - {x: -86.41897, y: -3}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &369792313
@@ -1944,6 +1949,26 @@ PrefabInstance:
       propertyPath: sprite
       value: 
       objectReference: {fileID: 761680878}
+    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: isSliding
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: slideColl
+      value: 
+      objectReference: {fileID: 36658306}
+    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: slideSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: regularColl
+      value: 
+      objectReference: {fileID: 36658306}
+    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: slideMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8419794092147976316, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
       propertyPath: m_Name
       value: Player
