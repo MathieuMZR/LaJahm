@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332733396}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.75, y: 3.5, z: -10}
+  m_LocalPosition: {x: 8.32, y: 3.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 556608443}
@@ -385,8 +385,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df5f5f2e7d303e4a850162df05c193e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 556608440}
   moveSpeed: 12
+  rb: {fileID: 556608440}
+  col: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  isGrounded: 0
+  extraJumpsValue: 0
+  extraJumps: 0
+  jumpForce: 0
+  airBuff: 0
+  fallGravityMultiplier: 0
+  coyoteTime: 0
+  jumpBufferTime: 0
+  isGliding: 0
+  gravityReductionWhileGliding: 0
+  moveXMultiplierWhileGliding: 0
+  isWallSliding: 0
+  wallSlideSpeed: 0
+  wallJumpBufferTime: 0
+  haveDash: 0
+  canDash: 0
+  isDashing: 0
+  dashDuration: 0
+  dashForce: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  groundedBoxSize: 0
+  wallBoxSize: 0
+  wallOnLeft: 0
+  wallOnRight: 0
 --- !u!114 &556608445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,12 +431,6 @@ MonoBehaviour:
   rb: {fileID: 556608440}
   col: {fileID: 556608441}
   spriteRenderer: {fileID: 556608442}
-  canRun: 0
-  runSpeed: 5.6
-  airSpped: 5.62
-  power: 1.08
-  acceleration: 10.7
-  deceleration: 11.3
   isGrounded: 0
   extraJumpsValue: 0
   extraJumps: 0
