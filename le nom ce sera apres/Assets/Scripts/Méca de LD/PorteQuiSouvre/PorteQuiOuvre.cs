@@ -5,13 +5,14 @@ using UnityEngine;
 public class PorteQuiOuvre : MonoBehaviour
 {
     public Animator animator;
-    public TriggerQuiferme Trigger;
+    public TriggerQuiOuvre Trigger;
 
     private void Update()
     {
         if (Trigger.isTriggered == true)
         {
-            
+            animator.SetTrigger("Ouvre");
+            animator.SetTrigger("BienOuvre");
         }
     }
 }
