@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WindForce_Y: 150
-  Character: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+  Character: {fileID: 8419794092147976316, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
 --- !u!61 &8706162166074094517
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class PorteQuiOuvre : MonoBehaviour
 {
-    public Animator animator;
     public TriggerQuiOuvre Trigger;
-
+    
+    public float time;
+    public float hauteur;
+    
     private void Update()
     {
+        
         if (Trigger.isTriggered == true)
         {
-            animator.SetTrigger("Ouvre");
-            animator.SetTrigger("BienOuvre");
+            /*animator.SetTrigger("Ferme");
+            animator.SetTrigger("BienFerme");*/
+            
+            Debug.Log(Trigger.isTriggered);
+            gameObject.transform.DOMoveY(hauteur, time);
         }
     }
 }
