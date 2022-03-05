@@ -10,15 +10,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Collider2D col;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
-    [Header("Vitesse")] 
-    [SerializeField] bool canRun;
-
-    [SerializeField] [Range(0f, 10f)] float runSpeed;
-    [SerializeField] [Range(0f, 10f)] float airSpped;
-    [SerializeField] [Range(0f, 2f)] float power;
-    [SerializeField] [Range(0f, 20f)] float acceleration;
-    [SerializeField] [Range(0f, 20f)] float deceleration;
-    
     [Header("Jump")] 
     [SerializeField] bool isGrounded;
     
@@ -77,19 +68,12 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Start()
-    {
-        canRun = true;
-    }
-
     void Update()
     {
-        Flip(rb.velocity.x); // Pour flip le sprite du joueur dans la bonne direction
         GroundCheck();
         WallCheck();
         DashCheck();
         ManageCoyoteTime();
-        ManageWallSlide();
         ManageInputs();
         ManageGravity();
 
@@ -102,8 +86,6 @@ public class PlayerController : MonoBehaviour
 
     void ManageInputs()
     {
-        if (canRun) Run(Input.GetAxisRaw("Horizontal"));
-        
         // Gère le jumpBuffer
         if (Input.GetButtonDown("Jump")) 
         {
@@ -114,13 +96,6 @@ public class PlayerController : MonoBehaviour
         {
             jumpBufferCounter -= Time.deltaTime;
             wallJumpBufferCounter -= Time.deltaTime;
-        }
-
-        // lance le WallJump
-        if (isWallSliding && !isGrounded && Input.GetButton("Jump") && !isGliding)
-        {
-            WallJump();
-            wallJumpBufferCounter = 0f;
         }
 
         // Saut
@@ -157,28 +132,6 @@ public class PlayerController : MonoBehaviour
         else rb.gravityScale = gravityScale;
     }
 
-    #region Run
-    void Run(float moveInput)
-    {
-        if (coyoteTimeCounter > 0f)
-        {
-            float targetSpeed = moveInput * runSpeed;
-            float speedDif = targetSpeed - rb.velocity.x;
-            float accelerate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration: deceleration;
-            float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelerate, power) * Mathf.Sign(speedDif);
-            rb.AddForce(movement * Vector2.right);
-        }
-        else
-        {
-            float targetSpeed = moveInput * airSpped;
-            float speedDif = targetSpeed - rb.velocity.x;
-            float accelerate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration: deceleration;
-            float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelerate, power) * Mathf.Sign(speedDif);
-            rb.AddForce(movement * Vector2.right);
-        }
-    }
-    #endregion
-    
     #region Ground & Wall Checks
     
     private IEnumerator co;
@@ -251,37 +204,7 @@ public class PlayerController : MonoBehaviour
              jumpBufferCounter = 0f; 
         }
     }
-
-    #region WallJump
-    void ManageWallSlide()
-    {
-        if ((wallOnLeft || wallOnRight) && !isGrounded && rb.velocity.y<0 ) isWallSliding = true;
-        else isWallSliding = false;
-        
-        if (isWallSliding)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, -wallSlideSpeed);
-        }
-    }
-
-    void WallJump()
-    {
-        canRun = false;
-        extraJumps++;
-        
-        if (wallOnLeft) rb.AddForce(new Vector2(Vector2.right.x * wallJumpForce, Vector2.up.y * wallJumpForce), ForceMode2D.Impulse);
-
-        if (wallOnRight) rb.AddForce(new Vector2(-Vector2.right.x * wallJumpForce, Vector2.up.y * wallJumpForce), ForceMode2D.Impulse);
-        
-        StartCoroutine(WallJumpCd());
-    }
-    IEnumerator WallJumpCd()
-    {
-        yield return new WaitForSeconds(wallJumpCd);
-        canRun = true;
-    }
-    #endregion
-
+    
     #region  Dash
     void DashCheck()
     {
@@ -317,19 +240,5 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(col.bounds.center + Vector3.right * col.bounds.size.x / 2, new Vector2(wallBoxSize, col.bounds.size.y/1.1f)); 
         Gizmos.DrawWireCube(col.bounds.center - Vector3.right * col.bounds.size.x / 2, new Vector2(wallBoxSize, col.bounds.size.y/1.1f));
-    }
-
-    void Flip(float _velocity) //Flip le sprite du joueur pour qu'il regarde dans la bonne direction
-    {
-        if (_velocity > 0.1f)
-        {
-            spriteRenderer.flipX = false; 
-            facingRight = true;
-        }
-        else if (_velocity < -0.1f)
-        {
-            spriteRenderer.flipX = true; 
-            facingRight = false;
-        }
     }
 }
