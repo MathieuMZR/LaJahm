@@ -3141,7 +3141,7 @@ Tilemap:
       - {fileID: -4688337500632273704, guid: c73dcc5abf86f494ea7e5581e37e7cfd, type: 3}
       - {fileID: 7971677920755133082, guid: c73dcc5abf86f494ea7e5581e37e7cfd, type: 3}
       - {fileID: -9142509526834431224, guid: c73dcc5abf86f494ea7e5581e37e7cfd, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 5, y: -4, z: 0}
@@ -3735,7 +3735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabList:
+  - {fileID: 6161133734769914639, guid: f0213330e993e364fa43cd5057c1f3a7, type: 3}
+  - {fileID: 6466074918539095081, guid: 70e0ef29c9d5ec748bb9b65db889d515, type: 3}
   - {fileID: 2710642663872891241}
-  - {fileID: 6005577521734068697, guid: 70e0ef29c9d5ec748bb9b65db889d515, type: 3}
   nextSpawnOffset: {fileID: 2710642663688038844}
-  stackGrids: {fileID: 0}
