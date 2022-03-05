@@ -23,7 +23,8 @@ public class GenerationModule : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            _randomFloat = Random.Range(0, prefabList.Count);
+            _randomFloat = Random.Range(0, stackGrids.oldSpawnedPrefab.Count);
+            Debug.Log(_randomFloat);
             _nextSpawnPrefab = prefabList[_randomFloat];
 
             GameObject spawnedPrefab = Instantiate(_nextSpawnPrefab);
@@ -52,6 +53,5 @@ public class GenerationModule : MonoBehaviour
     private void Update()
     {
         _indexList = stackGrids.oldSpawnedPrefab.Count;
-        Debug.Log(stackGrids.oldSpawnedPrefab.Count);
     }
 }
