@@ -11,11 +11,14 @@ public class BoosterArea : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public Animator anim;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            anim.SetBool("isActivate", true);
             Character = other.gameObject;
             rb = Character.GetComponent<Rigidbody2D>();
             rb.AddForce(new Vector2(0, WindForce_Y));
