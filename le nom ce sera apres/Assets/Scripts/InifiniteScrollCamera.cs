@@ -18,6 +18,6 @@ public class InifiniteScrollCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        self.transform.position = new Vector3(player.transform.position.x - Offset,CameraValue,-10f);
+        self.transform.position = new Vector3(player.transform.position.x - Offset,self.transform.position.y,-10f);
     }
 }
