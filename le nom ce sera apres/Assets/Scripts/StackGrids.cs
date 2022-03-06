@@ -10,7 +10,7 @@ public class StackGrids : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        oldSpawnedPrefab.Add(basePrefab);
     }
 
     // Update is called once per frame
