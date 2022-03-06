@@ -20,7 +20,8 @@ public class DeathZone : MonoBehaviour
                 objs = GameObject.FindGameObjectsWithTag("Player");
                 foreach(GameObject player in objs)
                 {
-                    player.transform.position = InitialSpawn.instance.transform.position;
+                    //player.transform.position = InitialSpawn.instance.transform.position;
+                    Destroy(player);
 
                     /*foreach (GameObject x in StackGrids.instance.oldSpawnedPrefab)
                     {
