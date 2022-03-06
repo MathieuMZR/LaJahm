@@ -16,12 +16,21 @@ public class GenerationModule : MonoBehaviour
 
     private int _indexList;
 
+    private bool canSpawn = true;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (StackGrids.instance.oldSpawnedPrefab.Count != 4)
+        if (StackGrids.instance.oldSpawnedPrefab.Count == 4 || 
+            StackGrids.instance.oldSpawnedPrefab.Count == 8 ||
+            StackGrids.instance.oldSpawnedPrefab.Count == 12)
+        {
+            canSpawn = false;
+        }
+        else
         {
             if (other.CompareTag("Player"))
             {
+                canSpawn = true;
                 _randomFloat = Random.Range(0, StackGrids.instance.prefabList.Count);
                 _nextSpawnPrefab = StackGrids.instance.prefabList[_randomFloat];
 
@@ -50,7 +59,7 @@ public class GenerationModule : MonoBehaviour
                 
                 //Destroy(StackGrids.instance.oldSpawnedPrefab[0]);
                 
-                StackGrids.instance.oldSpawnedPrefab.RemoveAt(0);
+                //StackGrids.instance.oldSpawnedPrefab.RemoveAt(0);
             }
         }
     }
