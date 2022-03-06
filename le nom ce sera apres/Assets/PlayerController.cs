@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] bool facingRight;
+    [SerializeField] public int Score;
     [Header("Components")] 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Collider2D col;

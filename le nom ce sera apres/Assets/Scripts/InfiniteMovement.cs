@@ -15,6 +15,7 @@ public class InfiniteMovement : MonoBehaviour
     [SerializeField] private float slideSpeed = 5f;
     public bool isSliding = false;
     public float slideMultiplier = 1.2f;
+    public int scorePlayer;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Collider2D col;

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8419794092141989684}
+  - component: {fileID: 3363962752580846}
   - component: {fileID: 8419794092141989687}
   - component: {fileID: 8419794092141989686}
   - component: {fileID: 8419794092141989685}
@@ -27,12 +28,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8419794092141989681}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 3.04, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8419794092147976305}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3363962752580846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8419794092141989681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed41594c27bebe84ea6a6911678124f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 8419794092141989681}
+  player: {fileID: 8419794092147976316}
+  Offset: -5
 --- !u!20 &8419794092141989687
 Camera:
   m_ObjectHideFlags: 0
@@ -60,7 +76,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.9710197
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -131,7 +147,7 @@ GameObject:
   - component: {fileID: 8419794092147976310}
   - component: {fileID: 8419794092147976311}
   - component: {fileID: 535788629}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -147,7 +163,7 @@ Transform:
   m_GameObject: {fileID: 8419794092147976316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 8419794092141989684}
   m_Father: {fileID: 0}
@@ -192,7 +208,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 999
   m_Sprite: {fileID: 21300000, guid: 589b2b75a97f0bc46b091f668ae944ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -250,7 +266,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8419794092147976310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +284,7 @@ MonoBehaviour:
   slideSpeed: 0
   isSliding: 0
   slideMultiplier: 1
+  scorePlayer: 0
   rb: {fileID: 8419794092147976306}
   col: {fileID: 8419794092147976307}
   spriteRenderer: {fileID: 8419794092147976304}
@@ -311,7 +328,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -331,7 +348,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Time: 5
   m_Parameters:
     serializedVersion: 3
@@ -398,7 +415,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.19936219, g: 0.7075472, b: 0.07676221, a: 1}
+      key0: {r: 0, g: 0, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}

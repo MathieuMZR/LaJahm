@@ -7,7 +7,7 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     public int collectibleScore = 200;
-    private GameObject Character;
+    private GameObject Player;
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +21,18 @@ public class ScoreManager : MonoBehaviour
 
     }
 
-    /*private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            Character = other.gameObject;
-            Character.score += collectibleScore;
-            Debug.Log(sH.score);
+            Player = other.gameObject;
+            InfiniteMovement.instance.scorePlayer += collectibleScore;
             Destroy(gameObject);
         }
-    }*/
+    }
+
+    IEnumerator Movements()
+    {
+        
+    }
 }

@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4863938001190291434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.87, y: -3.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d427a4824a5a34287e2ebefa9892bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sH: {fileID: 0}
   collectibleScore: 200
 --- !u!58 &4863938001190291429
 CircleCollider2D:
