@@ -2,26 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class DeathZone : MonoBehaviour
 {
-    private GameObject player;
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    private bool notNull;
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             if (other != null)
             {
-                FindObjectOfType().Pla
+                GameObject[] objs ;
+                objs = GameObject.FindGameObjectsWithTag("Player");
+                foreach(GameObject player in objs)
+                {
+                    Destroy(player);
+                }
             }
         }
-        
     }
 }
