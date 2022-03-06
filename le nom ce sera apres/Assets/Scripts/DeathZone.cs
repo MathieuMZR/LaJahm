@@ -7,8 +7,8 @@ using UnityEngine.PlayerLoop;
 public class DeathZone : MonoBehaviour
 {
     private bool notNull;
-    public GameObject initialSpawn;
-    public StackGrids stackGrids;
+    private GameObject initialSpawn;
+    private StackGrids stackGrids;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -22,11 +22,11 @@ public class DeathZone : MonoBehaviour
                 {
                     player.transform.position = initialSpawn.transform.position;
 
-                    foreach (GameObject x in stackGrids.oldSpawnedPrefab)
+                    foreach (GameObject x in StackGrids.instance.oldSpawnedPrefab)
                     {
                         Destroy(x);
                     }
-                    stackGrids.oldSpawnedPrefab.Clear();
+                    StackGrids.instance.oldSpawnedPrefab.Clear();
                 }
             }
         }
