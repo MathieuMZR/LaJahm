@@ -9,11 +9,8 @@ using Random = UnityEngine.Random;
 
 public class GenerationModule : MonoBehaviour
 {
-    public List<GameObject> prefabList;
-
     public GameObject _nextSpawnPrefab;
     public GameObject nextSpawnOffset;
-    public Vector3 offset;
 
     private int _randomFloat;
 
@@ -21,17 +18,22 @@ public class GenerationModule : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (StackGrids.instance.oldSpawnedPrefab.Count != 4)
         {
-            _randomFloat = Random.Range(0, prefabList.Count);
-            _nextSpawnPrefab = prefabList[_randomFloat];
+            if (other.CompareTag("Player"))
+            {
+                _randomFloat = Random.Range(0, StackGrids.instance.prefabList.Count);
+                _nextSpawnPrefab = StackGrids.instance.prefabList[_randomFloat];
 
-            Debug.Log(nextSpawnOffset.transform.position);
-            GameObject spawnedPrefab = Instantiate(_nextSpawnPrefab, this.transform.position + offset, Quaternion.identity);
+                Debug.Log(nextSpawnOffset.transform.position);
+                GameObject spawnedPrefab =
+                    Instantiate(_nextSpawnPrefab, this.transform.position + StackGrids.instance.offset, 
+                        Quaternion.identity);
 
 
-            StackGrids.instance.oldSpawnedPrefab.Add(spawnedPrefab);
-            _indexList = StackGrids.instance.oldSpawnedPrefab.Count;
+                StackGrids.instance.oldSpawnedPrefab.Add(spawnedPrefab);
+                _indexList = StackGrids.instance.oldSpawnedPrefab.Count;
+            }
         }
     }
 
