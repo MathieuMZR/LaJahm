@@ -46,3 +46,7 @@ MonoBehaviour:
   oldSpawnedPrefab:
   - {fileID: 0}
   basePrefab: {fileID: 6161133734769914639, guid: f0213330e993e364fa43cd5057c1f3a7, type: 3}
+  prefabList: []
+  offset: {x: 0, y: 0, z: 0}
+  modulePrehub: {fileID: 3610379975904378465, guid: 56fc8272d743e5c41a5f5366791029ee, type: 3}
+  moduleHub: {fileID: 4211865042712294628, guid: 614a704f44db5a14da95956e021d4002, type: 3}
