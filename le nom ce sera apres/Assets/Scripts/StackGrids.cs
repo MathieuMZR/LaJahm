@@ -31,13 +31,13 @@ public class StackGrids : MonoBehaviour
         if (oldSpawnedPrefab.Count == 4 ||
             oldSpawnedPrefab.Count == 8 ||
             oldSpawnedPrefab.Count == 12)
-        {
+        {/*
             Instantiate(StackGrids.instance.modulePrehub, transform.position + StackGrids.instance.offset,
                 Quaternion.identity);
             Instantiate(StackGrids.instance.moduleHub, transform.position + StackGrids.instance.offset * 2,
                 Quaternion.identity);
             
             Debug.Log("AHAH");
-        }
+        */}
     }
 }
