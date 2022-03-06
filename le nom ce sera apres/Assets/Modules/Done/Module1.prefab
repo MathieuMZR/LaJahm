@@ -2398,11 +2398,11 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 102
+  - m_RefCount: 101
     m_Data: {fileID: 11400000, guid: 63a0bac633b653b49bebfc59a740245e, type: 2}
   - m_RefCount: 105
     m_Data: {fileID: 11400000, guid: 2f078d3aa556b684b8c5d520553efe53, type: 2}
-  - m_RefCount: 49
+  - m_RefCount: 50
     m_Data: {fileID: 11400000, guid: 75ec08c5a8ad4a1478c8f2ef9dd510e9, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -2415,11 +2415,11 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 90
+  - m_RefCount: 89
     m_Data: {fileID: 21300000, guid: 24d66e7c69d15084489108a25d2e05d6, type: 3}
   - m_RefCount: 76
     m_Data: {fileID: 21300000, guid: 6308415019ebd4549979ce1053687323, type: 3}
-  - m_RefCount: 62
+  - m_RefCount: 63
     m_Data: {fileID: 21300000, guid: 495e9930a912d2942a3f6a73ed5e73a3, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 163
@@ -2440,7 +2440,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 69
+  - m_RefCount: 70
     m_Data:
       e00: -1
       e01: 0
@@ -2590,48 +2590,32 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 4004469195684650942}
     m_ColliderPaths:
-    - - X: 220000100
-        Y: 39999959
-      - X: 220000100
-        Y: 70000041
-      - X: 220000041
-        Y: 70000100
-      - X: -160000041
-        Y: 70000100
-      - X: -160000100
-        Y: 70000041
-      - X: -160000100
-        Y: 39999959
-      - X: -160000041
-        Y: 39999900
-      - X: 220000041
-        Y: 39999900
-    - - X: 220000100
-        Y: -70000041
-      - X: 220000100
-        Y: -39999959
-      - X: 220000041
-        Y: -39999900
-      - X: -160000041
-        Y: -39999900
-      - X: -160000100
-        Y: -39999959
-      - X: -160000100
-        Y: -70000041
-      - X: -160000041
-        Y: -70000100
-      - X: 220000041
-        Y: -70000100
+    - - X: 220000000
+        Y: 70000000
+      - X: -160000000
+        Y: 70000000
+      - X: -160000000
+        Y: 40000000
+      - X: 220000000
+        Y: 40000000
+    - - X: 220000000
+        Y: -40000000
+      - X: -160000000
+        Y: -40000000
+      - X: -160000000
+        Y: -70000000
+      - X: 220000000
+        Y: -70000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 21.999975, y: 3.99999}
-      - {x: 21.999975, y: 7.0000095}
-      - {x: -16.00001, y: 6.9999743}
-      - {x: -15.999974, y: 3.99999}
-    - - {x: 21.999975, y: -7.0000095}
-      - {x: 21.999975, y: -3.99999}
-      - {x: -16.00001, y: -4.0000253}
-      - {x: -15.999974, y: -7.0000095}
+    - - {x: 21.999971, y: 4}
+      - {x: 21.999971, y: 7}
+      - {x: -16, y: 6.9999704}
+      - {x: -15.999971, y: 4}
+    - - {x: 21.999971, y: -7}
+      - {x: 21.999971, y: -4}
+      - {x: -16, y: -4.000029}
+      - {x: -15.999971, y: -7}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!61 &4004469195684650941
