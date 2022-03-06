@@ -119,7 +119,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2266315878682109779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88178b5f5227c4549b80cd793177c747, type: 3}
+  m_Script: {fileID: 11500000, guid: ccc59bd80e617ef4f87a74be0908977a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   newMoveSpeed: 9
@@ -132,6 +132,9 @@ MonoBehaviour:
   Hub_1: {fileID: 0}
   Hub_2: {fileID: 0}
   Hub_3: {fileID: 0}
+  hub1_position: {x: 0, y: 0, z: 0}
+  hub2_position: {x: 0, y: 0, z: 0}
+  hub3_position: {x: 0, y: 0, z: 0}
   index: 0
   canAcessToHub: 0
 --- !u!1 &2531443549925331374
@@ -253,7 +256,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2531443549925331374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88178b5f5227c4549b80cd793177c747, type: 3}
+  m_Script: {fileID: 11500000, guid: ccc59bd80e617ef4f87a74be0908977a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   newMoveSpeed: 6
@@ -266,6 +269,9 @@ MonoBehaviour:
   Hub_1: {fileID: 0}
   Hub_2: {fileID: 0}
   Hub_3: {fileID: 0}
+  hub1_position: {x: 0, y: 0, z: 0}
+  hub2_position: {x: 0, y: 0, z: 0}
+  hub3_position: {x: 0, y: 0, z: 0}
   index: 0
   canAcessToHub: 0
 --- !u!1 &3047076924419005889
@@ -387,7 +393,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3047076924419005889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88178b5f5227c4549b80cd793177c747, type: 3}
+  m_Script: {fileID: 11500000, guid: ccc59bd80e617ef4f87a74be0908977a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   newMoveSpeed: 3
@@ -400,6 +406,9 @@ MonoBehaviour:
   Hub_1: {fileID: 0}
   Hub_2: {fileID: 0}
   Hub_3: {fileID: 0}
+  hub1_position: {x: 0, y: 0, z: 0}
+  hub2_position: {x: 0, y: 0, z: 0}
+  hub3_position: {x: 0, y: 0, z: 0}
   index: 0
   canAcessToHub: 0
 --- !u!1 &4853336559622752926
@@ -495,7 +504,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4853336559622752926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88178b5f5227c4549b80cd793177c747, type: 3}
+  m_Script: {fileID: 11500000, guid: ccc59bd80e617ef4f87a74be0908977a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   newMoveSpeed: 0
@@ -508,8 +517,11 @@ MonoBehaviour:
   Hub_1: {fileID: 4211865042712294628, guid: 614a704f44db5a14da95956e021d4002, type: 3}
   Hub_2: {fileID: 6603232831880585966, guid: bd35c27a64e99d040b9cf1e4e35d8d5a, type: 3}
   Hub_3: {fileID: 9096823683424616624, guid: e759588fad1f8b2408f1c7c9eb8f9139, type: 3}
+  hub1_position: {x: -50, y: 0, z: 0}
+  hub2_position: {x: -100, y: 0, z: 0}
+  hub3_position: {x: -150, y: 0, z: 0}
   index: 0
-  canAcessToHub: 0
+  canAcessToHub: 1
 --- !u!61 &5898312358584171327
 BoxCollider2D:
   m_ObjectHideFlags: 0
