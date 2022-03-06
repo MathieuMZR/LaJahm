@@ -127,7 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialSpawn: {fileID: 0}
-  stackGrids: {fileID: 0}
 --- !u!61 &7348928907399852444
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3055,7 +3054,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7546671623714324936}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -3086,10 +3085,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb37ae4b501c9fb478d6bde3f2b9ef3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabList:
-  - {fileID: 9207116278577264419}
+  _nextSpawnPrefab: {fileID: 0}
   nextSpawnOffset: {fileID: 6246621463188865739}
-  stackGrids: {fileID: 0}
 --- !u!1 &9207116278577264419
 GameObject:
   m_ObjectHideFlags: 0

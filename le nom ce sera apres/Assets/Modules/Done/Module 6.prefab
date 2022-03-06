@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 613031881588007794}
   - component: {fileID: 613031881588007793}
   - component: {fileID: 613031881588007565}
+  - component: {fileID: 7043015547341146681}
   m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
@@ -2981,11 +2982,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb37ae4b501c9fb478d6bde3f2b9ef3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabList:
-  - {fileID: 613031883137140869}
-  - {fileID: 6005577521734068697, guid: 70e0ef29c9d5ec748bb9b65db889d515, type: 3}
+  _nextSpawnPrefab: {fileID: 0}
   nextSpawnOffset: {fileID: 613031882651445328}
-  stackGrids: {fileID: 0}
+--- !u!61 &7043015547341146681
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613031881588007797}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 12}
+  m_EdgeRadius: 0
 --- !u!1 &613031882651445328
 GameObject:
   m_ObjectHideFlags: 0

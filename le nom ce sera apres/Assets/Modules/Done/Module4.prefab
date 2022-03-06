@@ -3221,7 +3221,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3406405080007360075}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -3252,12 +3252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb37ae4b501c9fb478d6bde3f2b9ef3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabList:
-  - {fileID: 6161133734769914639, guid: f0213330e993e364fa43cd5057c1f3a7, type: 3}
-  - {fileID: 3406405079396685243}
-  - {fileID: 2710642663872891241, guid: 47560148c73e49f4cb2446ec7229cb66, type: 3}
+  _nextSpawnPrefab: {fileID: 0}
   nextSpawnOffset: {fileID: 3406405078910498158}
-  stackGrids: {fileID: 0}
 --- !u!1001 &238879811259862446
 PrefabInstance:
   m_ObjectHideFlags: 0
