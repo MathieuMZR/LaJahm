@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!61 &36658306 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 8419794092147976307, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
-  m_PrefabInstance: {fileID: 8419794091832373866}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &369792307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,11 +1868,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!212 &761680878 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 8419794092147976304, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
-  m_PrefabInstance: {fileID: 8419794091832373866}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8419794091832373866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1885,10 +1875,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8419794092147976304, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 589b2b75a97f0bc46b091f668ae944ff, type: 3}
     - target: {fileID: 8419794092147976305, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1933,49 +1919,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8419794092147976307, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
-      propertyPath: m_Size.y
-      value: 1.4041699
-      objectReference: {fileID: 0}
-    - target: {fileID: 8419794092147976307, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.050521314
-      objectReference: {fileID: 0}
-    - target: {fileID: 8419794092147976307, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.4347826
-      objectReference: {fileID: 0}
     - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 761680878}
-    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
-      propertyPath: isSliding
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
-      propertyPath: moveSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
-      propertyPath: slideColl
-      value: 
-      objectReference: {fileID: 36658306}
-    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
-      propertyPath: slideSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
-      propertyPath: regularColl
-      value: 
-      objectReference: {fileID: 36658306}
-    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
-      propertyPath: groundedBoxSize
+      propertyPath: jumpBufferTime
       value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
-      propertyPath: slideMultiplier
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8419794092147976316, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
       propertyPath: m_Name

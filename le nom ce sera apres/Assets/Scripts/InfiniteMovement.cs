@@ -70,7 +70,6 @@ public class InfiniteMovement : MonoBehaviour
             //rb.velocity = new Vector2(30, rb.velocity.y);
         //}
         
-        GroundCheck();
         ManageCoyoteTime();
         ManageInputs();
         ManageGravity();
@@ -134,21 +133,13 @@ public class InfiniteMovement : MonoBehaviour
     
     private IEnumerator co;
     private bool resetSetGroundedFalseDelay = true;
-    
-    void GroundCheck() // Fait une box en dessous du joueur pour dectecter si le joueur touche le sol
+
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (Physics2D.OverlapBox(col.bounds.center - Vector3.up * col.bounds.size.y / 2,
-            new Vector2(col.bounds.size.x / 1.1f, groundedBoxSize), 0f, groundLayer)) isGrounded = true;
-        else
-        {
-            if (!isGrounded) return;
-            if (!resetSetGroundedFalseDelay) return;
-            if (co != null) StopCoroutine(co);
-            co = SetGroundedFalseDelay();
-            StartCoroutine(co);
-        }
+        isGrounded = true;
+        anim.SetBool("jump",false);
     }
-    
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawCube(col.bounds.center - Vector3.up * col.bounds.size.y / 2, 
@@ -157,9 +148,9 @@ public class InfiniteMovement : MonoBehaviour
     
     IEnumerator SetGroundedFalseDelay()
     {
-        resetSetGroundedFalseDelay = false;
-        yield return new WaitForSeconds(coyoteTime);
         isGrounded = false;
+        //resetSetGroundedFalseDelay = false;
+        yield return new WaitForSeconds(coyoteTime);
         resetSetGroundedFalseDelay = true;
     }
     
@@ -175,12 +166,15 @@ public class InfiniteMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpBufferCounter = 0f;
+            anim.SetBool("jump", true);
+            isGrounded = false;
         }
-        else if (extraJumps > 0)
+        else if (extraJumps > 0 && !isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             extraJumps--;
-            jumpBufferCounter = 0f; 
+            jumpBufferCounter = 0f;
+            anim.Play("Jump", -1, 0);
         }
     }
     
