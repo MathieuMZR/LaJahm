@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - GridHandler
+  - New tag
+  - InteractUI
   layers:
   - Default
   - TransparentFX

@@ -146,7 +146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8419794092147976316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.226063, y: -1.4815617, z: 0}
+  m_LocalPosition: {x: -30.555954, y: -1.5560198, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8419794092141989684}
@@ -268,6 +268,7 @@ MonoBehaviour:
   slideSpeed: 0
   isSliding: 0
   slideMultiplier: 1
+  scorePlayer: 0
   rb: {fileID: 8419794092147976306}
   col: {fileID: 8419794092147976307}
   spriteRenderer: {fileID: 8419794092147976304}
