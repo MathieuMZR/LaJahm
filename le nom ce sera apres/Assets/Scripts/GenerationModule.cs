@@ -24,7 +24,7 @@ public class GenerationModule : MonoBehaviour
             StackGrids.instance.oldSpawnedPrefab.Count == 8 ||
             StackGrids.instance.oldSpawnedPrefab.Count == 12)
         {
-            canSpawn = false;
+            canSpawn = true;
         }
         else
         {
