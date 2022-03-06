@@ -30,6 +30,8 @@ public class HubManager : MonoBehaviour
     private bool isHub1 = false;
     private bool isHub2 = false;
     private bool isHub3 = false;
+
+    public Animator anim;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -38,6 +40,8 @@ public class HubManager : MonoBehaviour
             Character = other.gameObject;
             Player = other.transform;
             InfiniteMovement.instance.moveSpeed = newMoveSpeed;
+            
+            anim.SetBool("Plug", true);
         }
         
         if (canAcessToHub == true)

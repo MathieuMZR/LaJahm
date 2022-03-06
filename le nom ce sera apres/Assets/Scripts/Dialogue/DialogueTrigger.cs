@@ -9,11 +9,19 @@ public class DialogueTrigger : MonoBehaviour
     public bool isInRange;
 
     private Text interactUI;
+    
+    public static DialogueTrigger instance;
 
     private void Awake()
     {
         interactUI = GameObject.FindGameObjectWithTag("InteractUI").GetComponent<Text>();
         interactUI.enabled = false;
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de DialogueManager dans la scène");
+            return;
+        }
+        instance = this;
     }
     // Update is called once per frame
     void Update()
