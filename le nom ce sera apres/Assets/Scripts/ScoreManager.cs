@@ -11,7 +11,9 @@ public class ScoreManager : MonoBehaviour
     private float graphValue;
     public ParticleSystem PS;
     private ParticleSystem PSInstantate;
-    
+    public AudioSource audioSource;
+    public AudioClip pileCollect;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -20,6 +22,7 @@ public class ScoreManager : MonoBehaviour
             InfiniteMovement.instance.scorePlayer += collectibleScore;
             PSInstantate = Instantiate(PS, gameObject.transform.position, Quaternion.identity);
             PSInstantate.Play();
+            AudioSource.PlayClipAtPoint(pileCollect, transform.position);
             Destroy(gameObject);
         }
     }
