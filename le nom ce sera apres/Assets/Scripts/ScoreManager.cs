@@ -31,8 +31,8 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    IEnumerator Movements()
-    {
-        
-    }
+    // IEnumerator Movements()
+    // {
+    //     
+    // }
 }
