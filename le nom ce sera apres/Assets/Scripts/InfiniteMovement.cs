@@ -54,6 +54,10 @@ public class InfiniteMovement : MonoBehaviour
     [SerializeField] [Header("Animations")]
     public Animator anim;
 
+    public AudioSource audioSource1;
+    public AudioSource audioSource2;
+    public AudioSource audioSource3;
+
     public static InfiniteMovement instance;
     private void Awake() // récupère les components
     {
@@ -135,6 +139,7 @@ public class InfiniteMovement : MonoBehaviour
     {
         isGrounded = true;
         anim.SetBool("jump",false);
+
     }
 
     private void OnDrawGizmos()
@@ -164,7 +169,7 @@ public class InfiniteMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpBufferCounter = 0f;
             anim.SetBool("jump", true);
-            
+            audioSource2.Play();
             isGrounded = false;
         }
         else if (extraJumps > 0 && !isGrounded)
@@ -173,6 +178,7 @@ public class InfiniteMovement : MonoBehaviour
             extraJumps--;
             jumpBufferCounter = 0f;
             anim.Play("Jump", -1, 0);
+            audioSource2.Play();
         }
     }
     
@@ -189,15 +195,18 @@ public class InfiniteMovement : MonoBehaviour
 
         //rb.AddForce(Vector2.right * slideSpeed);
         slideColl.size = new Vector2(1f, 1.05f);
+        audioSource1.Play();
         StartCoroutine(stopSlide());
         anim.SetBool("Slide", true);
+        
     } 
 
     IEnumerator stopSlide()
     {
         yield return new WaitForSeconds(0.8f);
         //anim.Play("Idle");
-        //anim.SetBool("IsSlide", false);
+        //anim.SetBool
+        //("IsSlide", false);
         slideColl.size = new Vector2(1f, 2f);
         //regularColl.enabled = true;
         //slideColl.enabled = true;
@@ -206,6 +215,18 @@ public class InfiniteMovement : MonoBehaviour
         anim.SetBool("Slide", false);
     }
 
-    
+  /*  void PlayFootSteps()
+    {
+        audioSource3.Play();
+        StartCoroutine(waitFootSteps());
+
+    }
+
+    IEnumerator waitFootSteps()
+    {
+        yield return new WaitForSeconds(0.3f);
+    }
+    */
+
 }
 
