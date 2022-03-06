@@ -20,7 +20,7 @@ public class GenerationModule : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        /*if (other.CompareTag("Player"))
         {
             canSpawn = true;
             _randomFloat = Random.Range(0, StackGrids.instance.prefabList.Count);
@@ -34,31 +34,30 @@ public class GenerationModule : MonoBehaviour
 
             StackGrids.instance.oldSpawnedPrefab.Add(spawnedPrefab);
             _indexList = StackGrids.instance.oldSpawnedPrefab.Count;
-        }
+        }*/
 
-        /*if (StackGrids.instance.oldSpawnedPrefab.Count == 4 || 
-            StackGrids.instance.oldSpawnedPrefab.Count == 8 ||
-            StackGrids.instance.oldSpawnedPrefab.Count == 12)
+        /*if (StackGrids.instance.oldSpawnedPrefab.Count == 6 ||
+            StackGrids.instance.oldSpawnedPrefab.Count == 14 ||
+            StackGrids.instance.oldSpawnedPrefab.Count == 24)
         {
-            canSpawn = true;
+            canSpawn = false;
         }
         else
+        {*/
+        if (other.CompareTag("Player"))
         {
-            if (other.CompareTag("Player"))
-            {
-                canSpawn = true;
-                _randomFloat = Random.Range(0, StackGrids.instance.prefabList.Count);
-                _nextSpawnPrefab = StackGrids.instance.prefabList[_randomFloat];
+            canSpawn = true;
+            _randomFloat = Random.Range(0, StackGrids.instance.prefabList.Count);
+            _nextSpawnPrefab = StackGrids.instance.prefabList[_randomFloat];
 
-                Debug.Log(nextSpawnOffset.transform.position);
-                GameObject spawnedPrefab =
-                    Instantiate(_nextSpawnPrefab, this.transform.position + StackGrids.instance.offset, 
-                        Quaternion.identity);
+            Debug.Log(nextSpawnOffset.transform.position);
+            GameObject spawnedPrefab = Instantiate(_nextSpawnPrefab, transform.position + StackGrids.instance.offset,
+                Quaternion.identity);
 
 
-                StackGrids.instance.oldSpawnedPrefab.Add(spawnedPrefab);
-                _indexList = StackGrids.instance.oldSpawnedPrefab.Count;
-            }*/
+            StackGrids.instance.oldSpawnedPrefab.Add(spawnedPrefab);
+            _indexList = StackGrids.instance.oldSpawnedPrefab.Count;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
