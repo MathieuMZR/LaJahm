@@ -8,8 +8,9 @@ public class ScoreManager : MonoBehaviour
 {
     public int collectibleScore = 200;
     private GameObject Player;
-    public AnimationCurve animCurve;
     private float graphValue;
+    public ParticleSystem PS;
+    private ParticleSystem PSInstantate;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,6 +18,8 @@ public class ScoreManager : MonoBehaviour
         {
             Player = other.gameObject;
             InfiniteMovement.instance.scorePlayer += collectibleScore;
+            PSInstantate = Instantiate(PS, gameObject.transform.position, Quaternion.identity);
+            PSInstantate.Play();
             Destroy(gameObject);
         }
     }

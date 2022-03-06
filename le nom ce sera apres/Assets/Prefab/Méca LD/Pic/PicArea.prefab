@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5797606784308131383}
   - component: {fileID: 5797606784308131336}
-  - component: {fileID: 5797606784308131381}
+  - component: {fileID: 5465507358729281716}
   - component: {fileID: 5797606784308131382}
   m_Layer: 0
   m_Name: PicArea
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5797606784308131381
+--- !u!114 &5465507358729281716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,10 +93,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5797606784308131337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b5f399301eb84c43a3ae1d4d854faa8, type: 3}
+  m_Script: {fileID: 11500000, guid: 62c39cda83b8df043b9b0963b41b27be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Character: {fileID: 8419794092147976316, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+  initialSpawn: {fileID: 0}
+  stackGrids: {fileID: 0}
 --- !u!61 &5797606784308131382
 BoxCollider2D:
   m_ObjectHideFlags: 0
