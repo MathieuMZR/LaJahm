@@ -64,14 +64,6 @@ public class InfiniteMovement : MonoBehaviour
     
     void Update()
     {
-        //rb.velocity = new Vector2(transform.localScale.x * moveSpeed, rb.velocity.y);
-        //rb.velocity = new Vector2(rb.velocity.x * moveSpeed/2.1f, rb.velocity.y);
-        //rb.velocity = (new Vector2(moveSpeed, rb.velocity.y));
-        //if (rb.velocity.x > 30)
-        //{
-            //rb.velocity = new Vector2(30, rb.velocity.y);
-        //}
-        
         ManageCoyoteTime();
         ManageInputs();
         ManageGravity();
@@ -90,6 +82,7 @@ public class InfiniteMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(transform.localScale.x * moveSpeed, rb.velocity.y);
+        anim.SetFloat("Run", 1);
     }
 
     void ManageInputs()
@@ -121,6 +114,7 @@ public class InfiniteMovement : MonoBehaviour
         if (Input.GetButtonDown("Slide") && rb.velocity.x > 0)
         {
             rb.velocity = new Vector2(rb.velocity.x * slideMultiplier, rb.velocity.y);
+            anim.SetBool("Slide", true);
         }
 
     }
@@ -169,6 +163,7 @@ public class InfiniteMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpBufferCounter = 0f;
             anim.SetBool("jump", true);
+            
             isGrounded = false;
         }
         else if (extraJumps > 0 && !isGrounded)
@@ -192,8 +187,9 @@ public class InfiniteMovement : MonoBehaviour
         //slideColl.enabled = true;
 
         //rb.AddForce(Vector2.right * slideSpeed);
-        slideColl.size = new Vector2(1f, 0.7f);
+        slideColl.size = new Vector2(1f, 1.05f);
         StartCoroutine(stopSlide());
+        anim.SetBool("Slide", true);
     } 
 
     IEnumerator stopSlide()
@@ -201,11 +197,12 @@ public class InfiniteMovement : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         //anim.Play("Idle");
         //anim.SetBool("IsSlide", false);
-        slideColl.size = new Vector2(1f, 1.4f);
+        slideColl.size = new Vector2(1f, 2f);
         //regularColl.enabled = true;
         //slideColl.enabled = true;
         isSliding = false;
         yield return null;
+        anim.SetBool("Slide", false);
     }
 
     
