@@ -33,6 +33,9 @@ public class ScoreManager : MonoBehaviour
 
     IEnumerator Movements()
     {
-        
+        for (int i = 0; i < 5; i++)
+        {
+            yield return new WaitForSeconds(.1f);
+        }
     }
 }
