@@ -3231,8 +3231,10 @@ MonoBehaviour:
   prefabList:
   - {fileID: 6161133734769914639, guid: f0213330e993e364fa43cd5057c1f3a7, type: 3}
   - {fileID: 1285600757658573690}
-  - {fileID: 2710642663872891241, guid: 47560148c73e49f4cb2446ec7229cb66, type: 3}
-  nextSpawnOffset: {fileID: 1285600757541452719}
+  - {fileID: 4784997877993946086, guid: 69f6716a98ed8a942be061bbb2d9966b, type: 3}
+  - {fileID: 7549410969706143964, guid: 29a693410f3d516419fcfc4c9e943a83, type: 3}
+  - {fileID: 8778637997486897616, guid: 615162437f3e4c84385c9140c0f9f66f, type: 3}
+  nextSpawnOffset: {fileID: 7753839721340899119, guid: 5aaed48618cb0f342991b446b3d1e267, type: 3}
   stackGrids: {fileID: 0}
 --- !u!1 &1285600757541452719
 GameObject:

@@ -22,11 +22,11 @@ public class DeathZone : MonoBehaviour
                 {
                     player.transform.position = initialSpawn.transform.position;
 
-                    foreach (GameObject x in stackGrids.oldSpawnedPrefab)
+                    foreach (GameObject x in StackGrids.instance.oldSpawnedPrefab)
                     {
                         Destroy(x);
                     }
-                    stackGrids.instance.oldSpawnedPrefab.Clear();
+                    StackGrids.instance.oldSpawnedPrefab.Clear();
                 }
             }
         }
