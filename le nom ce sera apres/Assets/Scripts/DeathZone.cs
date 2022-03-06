@@ -5,12 +5,7 @@ using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
-    public BoxCollider2D boxCollider2D;
     private GameObject player;
-    void Start()
-    {
-        boxCollider2D = GetComponent<BoxCollider2D>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -22,8 +17,10 @@ public class DeathZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            player = other.gameObject;
-            Destroy(player);
+            if (other != null)
+            {
+                FindObjectOfType().Pla
+            }
         }
         
     }
