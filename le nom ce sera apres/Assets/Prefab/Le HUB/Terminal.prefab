@@ -119,11 +119,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2266315878682109779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccc59bd80e617ef4f87a74be0908977a, type: 3}
+  m_Script: {fileID: 11500000, guid: 88178b5f5227c4549b80cd793177c747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newMoveSpeed: 9
-  Player: {fileID: 0}
+  newMoveSpeed: 15
+  Player: {fileID: 8419794092147976305, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
   respawnPointHub1: {fileID: 0}
   respawnPointHub2: {fileID: 0}
   respawnPointHub3: {fileID: 0}
@@ -256,10 +256,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2531443549925331374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccc59bd80e617ef4f87a74be0908977a, type: 3}
+  m_Script: {fileID: 11500000, guid: 88178b5f5227c4549b80cd793177c747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newMoveSpeed: 6
+  newMoveSpeed: 15
   Player: {fileID: 0}
   respawnPointHub1: {fileID: 0}
   respawnPointHub2: {fileID: 0}
@@ -284,8 +284,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3921763029089046897}
   - component: {fileID: 3681231518537427449}
+  - component: {fileID: 7690147883534239242}
   - component: {fileID: 948397920000535061}
-  - component: {fileID: 4639809475230638973}
   m_Layer: 0
   m_Name: Trigger (2)
   m_TagString: Untagged
@@ -358,6 +358,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7690147883534239242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3047076924419005889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88178b5f5227c4549b80cd793177c747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMoveSpeed: 15
+  Player: {fileID: 0}
+  respawnPointHub1: {fileID: 0}
+  respawnPointHub2: {fileID: 0}
+  respawnPointHub3: {fileID: 0}
+  respawnPointModule1: {fileID: 0}
+  RespawnPointModule1: {fileID: 0}
+  Hub_1: {fileID: 0}
+  Hub_2: {fileID: 0}
+  Hub_3: {fileID: 0}
+  hub1_position: {x: 0, y: 0, z: 0}
+  hub2_position: {x: 0, y: 0, z: 0}
+  hub3_position: {x: 0, y: 0, z: 0}
+  index: 0
+  canAcessToHub: 0
 --- !u!61 &948397920000535061
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -384,33 +411,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4639809475230638973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3047076924419005889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccc59bd80e617ef4f87a74be0908977a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newMoveSpeed: 3
-  Player: {fileID: 0}
-  respawnPointHub1: {fileID: 0}
-  respawnPointHub2: {fileID: 0}
-  respawnPointHub3: {fileID: 0}
-  respawnPointModule1: {fileID: 0}
-  RespawnPointModule1: {fileID: 0}
-  Hub_1: {fileID: 0}
-  Hub_2: {fileID: 0}
-  Hub_3: {fileID: 0}
-  hub1_position: {x: 0, y: 0, z: 0}
-  hub2_position: {x: 0, y: 0, z: 0}
-  hub3_position: {x: 0, y: 0, z: 0}
-  index: 0
-  canAcessToHub: 0
 --- !u!1 &4853336559622752926
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4853336559622752926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccc59bd80e617ef4f87a74be0908977a, type: 3}
+  m_Script: {fileID: 11500000, guid: 88178b5f5227c4549b80cd793177c747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   newMoveSpeed: 0
