@@ -97,7 +97,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialSpawn: {fileID: 0}
-  stackGrids: {fileID: 0}
 --- !u!61 &5797606784308131382
 BoxCollider2D:
   m_ObjectHideFlags: 0
