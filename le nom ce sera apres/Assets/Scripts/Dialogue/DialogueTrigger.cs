@@ -2,8 +2,10 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class DialogueTrigger : MonoBehaviour
 {
+
     public Dialogue dialogue;
 
     public bool isInRange;
@@ -11,6 +13,10 @@ public class DialogueTrigger : MonoBehaviour
     private Text interactUI;
     
     public static DialogueTrigger instance;
+    
+    public AudioSource audioSource;
+    public AudioSource audioSource1;
+
 
     private void Awake()
     {
@@ -28,8 +34,15 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (isInRange && Input.GetKeyDown((KeyCode.E)))
         {
-            
+            audioSource1.Pause();
+            audioSource.Play();
             TriggerDialogue();
+            
+        }
+        else
+        {
+            audioSource.Pause();
+            audioSource1.Play();
         }
     }
 
