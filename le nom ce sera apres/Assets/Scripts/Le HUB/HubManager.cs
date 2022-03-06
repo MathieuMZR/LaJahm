@@ -106,6 +106,8 @@ public class HubManager : MonoBehaviour
         RespawnPointModule1.SetActive(false);
         RespawnPointModule1.SetActive(true);
         newMoveSpeed = 0f;
+        
+        Debug.Log("va te faire foutre");
     }
     
     IEnumerator ComeBackHub2()
