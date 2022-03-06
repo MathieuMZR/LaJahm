@@ -8,31 +8,19 @@ public class ScoreManager : MonoBehaviour
 {
     public int collectibleScore = 200;
     private GameObject Player;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    private float graphValue;
+    public ParticleSystem PS;
+    private ParticleSystem PSInstantate;
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             Player = other.gameObject;
             InfiniteMovement.instance.scorePlayer += collectibleScore;
+            PSInstantate = Instantiate(PS, gameObject.transform.position, Quaternion.identity);
+            PSInstantate.Play();
             Destroy(gameObject);
         }
     }
-
-    // IEnumerator Movements()
-    // {
-    //     
-    // }
 }

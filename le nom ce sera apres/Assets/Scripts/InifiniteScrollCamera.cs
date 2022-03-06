@@ -7,6 +7,7 @@ public class InifiniteScrollCamera : MonoBehaviour
     public GameObject self;
     public GameObject player;
     public float Offset;
+    public float CameraValue;
     
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,6 @@ public class InifiniteScrollCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        self.transform.position = new Vector3(player.transform.position.x - Offset,0f,-10f);
+        self.transform.position = new Vector3(player.transform.position.x - Offset,0,-10f);
     }
 }
