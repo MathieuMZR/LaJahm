@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 8882076520915174756}
   - component: {fileID: 8882076520915174758}
   - component: {fileID: 8882076520915174759}
+  - component: {fileID: 7484906703647211420}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -135,7 +136,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -157,10 +158,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d20ee1b98cbe45bd6397492392ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerLaser: {fileID: 9177262934975550586, guid: 287ec6751abed06428542426725e8d09, type: 3}
+  speed: 20
   raycastLaser1: {fileID: 8882076520256537515}
   raycastLaser2: {fileID: 8882076520444927049}
   playerLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   lenghtRaycast: 20
   shootReady: 0
+--- !u!50 &7484906703647211420
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8882076520915174757}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
