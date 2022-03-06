@@ -1875,6 +1875,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8419794092147976304, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8793639957104055765, guid: 9ae51f1a24bf4e244948c7426518b304, type: 3}
     - target: {fileID: 8419794092147976305, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1918,6 +1922,34 @@ PrefabInstance:
     - target: {fileID: 8419794092147976305, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419794092147976307, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: m_Size.x
+      value: 0.848757
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419794092147976307, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: m_Size.y
+      value: 2.099887
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419794092147976307, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.39323127
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419794092147976307, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.035397053
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419794092147976307, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419794092147976307, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
+      propertyPath: moveSpeed
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8419794092147976310, guid: fc58e7b4782c3eb4fb733dca78b9a943, type: 3}
       propertyPath: jumpBufferTime
