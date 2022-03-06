@@ -51,6 +51,7 @@ public class InfiniteMovement : MonoBehaviour
     [SerializeField] [Header("Animations")]
     public Animator anim;
     
+    
     private void Awake() // récupère les components
     {
         rb = GetComponent<Rigidbody2D>();
