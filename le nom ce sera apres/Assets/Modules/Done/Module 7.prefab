@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7549410969706143964}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.31, y: -20.36, z: 1.839118}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 83724377600215221}
@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9203655480639395383}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.03, y: 19.8, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5925106868125298665}
@@ -3086,8 +3086,9 @@ MonoBehaviour:
   - {fileID: 4784997877993946086, guid: 69f6716a98ed8a942be061bbb2d9966b, type: 3}
   - {fileID: 7549410969706143964}
   - {fileID: 8778637997486897616, guid: 615162437f3e4c84385c9140c0f9f66f, type: 3}
+  _nextSpawnPrefab: {fileID: 0}
   nextSpawnOffset: {fileID: 4734038718634120500}
-  stackGrids: {fileID: 0}
+  offset: {x: 36.93, y: 0, z: 0}
 --- !u!1001 &2489159628897357909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3109,11 +3110,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5797606784308131383, guid: 3be36e07b74c514418b70358a0dfd607, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.46
+      value: 6.48
       objectReference: {fileID: 0}
     - target: {fileID: 5797606784308131383, guid: 3be36e07b74c514418b70358a0dfd607, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.97
+      value: 2.19
       objectReference: {fileID: 0}
     - target: {fileID: 5797606784308131383, guid: 3be36e07b74c514418b70358a0dfd607, type: 3}
       propertyPath: m_LocalPosition.z

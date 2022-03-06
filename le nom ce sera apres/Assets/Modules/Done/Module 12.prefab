@@ -3134,8 +3134,9 @@ MonoBehaviour:
   - {fileID: 4784997877993946086, guid: 69f6716a98ed8a942be061bbb2d9966b, type: 3}
   - {fileID: 7549410969706143964, guid: 29a693410f3d516419fcfc4c9e943a83, type: 3}
   - {fileID: 8778637997486897616}
+  _nextSpawnPrefab: {fileID: 0}
   nextSpawnOffset: {fileID: 8778637997638588677}
-  stackGrids: {fileID: 0}
+  offset: {x: 36.93, y: 0, z: 0}
 --- !u!1 &8778637997486897616
 GameObject:
   m_ObjectHideFlags: 0
@@ -3161,7 +3162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8778637997486897616}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.39, y: 6.89, z: 40.466824}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8778637996608573987}

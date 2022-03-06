@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285600756520218762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.25, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1285600757658573688}
@@ -3197,7 +3197,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285600756520218762}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -3234,8 +3234,9 @@ MonoBehaviour:
   - {fileID: 4784997877993946086, guid: 69f6716a98ed8a942be061bbb2d9966b, type: 3}
   - {fileID: 7549410969706143964, guid: 29a693410f3d516419fcfc4c9e943a83, type: 3}
   - {fileID: 8778637997486897616, guid: 615162437f3e4c84385c9140c0f9f66f, type: 3}
+  _nextSpawnPrefab: {fileID: 0}
   nextSpawnOffset: {fileID: 7753839721340899119, guid: 5aaed48618cb0f342991b446b3d1e267, type: 3}
-  stackGrids: {fileID: 0}
+  offset: {x: 36.93, y: 0, z: 0}
 --- !u!1 &1285600757541452719
 GameObject:
   m_ObjectHideFlags: 0
@@ -3291,7 +3292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285600757658573690}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 73.135124, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1285600756520218761}
