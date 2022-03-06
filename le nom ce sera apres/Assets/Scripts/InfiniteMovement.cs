@@ -52,13 +52,14 @@ public class InfiniteMovement : MonoBehaviour
 
     [SerializeField] [Header("Animations")]
     public Animator anim;
-    
-    
+
+    public static InfiniteMovement instance;
     private void Awake() // récupère les components
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        if (instance == null) instance = this;
     }
     
     void Update()

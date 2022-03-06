@@ -16,7 +16,7 @@ public class EntryHub : MonoBehaviour
         {
             Character = other.gameObject;
             //movement.moveSpeed = moveSpeed;
-            //InfiniteMovement.instance.moveSpeed = newMoveSpeed;
+            InfiniteMovement.instance.moveSpeed = newMoveSpeed;
         }
         
         if (isUi == true)
