@@ -42,7 +42,7 @@ public class ScoreManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         
-        for (int i = 0; i > 0; i--)
+        for (int j = 0; j > 0; j--)
         {
             this.gameObject.transform.position -= new Vector3(0f, 0.2f, 0f);
             yield return new WaitForSeconds(0.01f);
