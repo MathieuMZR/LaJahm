@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
-  Laser: {fileID: 8882076520915174757, guid: 2226d329ddb322b40a8deee93e435e03, type: 3}
-  offSet: {x: -45.5, y: 0, z: 0}
+  Laser: {fileID: 7082605310330599933, guid: 2226d329ddb322b40a8deee93e435e03, type: 3}
+  offSet: {x: 10, y: 0, z: 0}
 --- !u!61 &5078042470674263680
 BoxCollider2D:
   m_ObjectHideFlags: 0

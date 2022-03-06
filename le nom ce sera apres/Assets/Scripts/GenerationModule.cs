@@ -4,45 +4,36 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using Random = UnityEngine.Random;
 
 public class GenerationModule : MonoBehaviour
 {
-    public List<GameObject> prefabList;
-
-    private GameObject _nextSpawnPrefab;
+    public GameObject _nextSpawnPrefab;
     public GameObject nextSpawnOffset;
 
     private int _randomFloat;
 
-    public StackGrids stackGrids;
-
     private int _indexList;
-
-    private void Start()
-    {
-        // GameObject[] stackgrids ;
-        // stackgrids = GameObject.FindGameObjectsWithTag("EditorOnly");
-        // foreach(GameObject x in stackgrids)
-        // {
-        //     stackGrids = x.;
-        //     Debug.Log(x.name);
-        // }
-        stackGrids = FindObjectOfType<StackGrids>();
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (StackGrids.instance.oldSpawnedPrefab.Count != 4)
         {
-            _randomFloat = Random.Range(0, prefabList.Count);
-            _nextSpawnPrefab = prefabList[_randomFloat];
+            if (other.CompareTag("Player"))
+            {
+                _randomFloat = Random.Range(0, StackGrids.instance.prefabList.Count);
+                _nextSpawnPrefab = StackGrids.instance.prefabList[_randomFloat];
 
-            GameObject spawnedPrefab = Instantiate(_nextSpawnPrefab);
-            spawnedPrefab.transform.position = nextSpawnOffset.transform.position;
-            
-            stackGrids.oldSpawnedPrefab.Add(spawnedPrefab);
-            _indexList = stackGrids.oldSpawnedPrefab.Count;
+                Debug.Log(nextSpawnOffset.transform.position);
+                GameObject spawnedPrefab =
+                    Instantiate(_nextSpawnPrefab, this.transform.position + StackGrids.instance.offset, 
+                        Quaternion.identity);
+
+
+                StackGrids.instance.oldSpawnedPrefab.Add(spawnedPrefab);
+                _indexList = StackGrids.instance.oldSpawnedPrefab.Count;
+            }
         }
     }
 
@@ -50,17 +41,22 @@ public class GenerationModule : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (stackGrids.oldSpawnedPrefab.Count > 2)
+            if (StackGrids.instance.oldSpawnedPrefab.Count > 2)
             {
-                if (stackGrids.basePrefab != null)
+                if (StackGrids.instance.basePrefab != null)
                 {
-                    Destroy(stackGrids.basePrefab);
+                    //Destroy(StackGrids.instance.basePrefab);
                 }
                 
-                Destroy(stackGrids.oldSpawnedPrefab[0]);
+                //Destroy(StackGrids.instance.oldSpawnedPrefab[0]);
                 
-                stackGrids.oldSpawnedPrefab.RemoveAt(0);
+                StackGrids.instance.oldSpawnedPrefab.RemoveAt(0);
             }
         }
+    }
+
+    private void Update()
+    {
+        //Debug.Log(stackGrids);
     }
 }
